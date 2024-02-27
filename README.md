@@ -1,12 +1,11 @@
 # CFIBRO.PTML
-IFPTML-GDPR Compliant Personalized Medicine Metagenomic Analysis of Microbiome Cystic Fibrosis Patients
+Advancing Cystic Fibrosis Care: Artificial Intelligence for Precision Medicine
+
 
 # Authors
-Carmen Velázquez1, María D. Pastor-Vivero4,*, Estefanía Ascencio-Medina2,3, 
-José Ángel Fernández-Higuero6, Maialen Zabala1, Laura Acosta2, Aliuska Duardo-Sánchez5, 
-Ane Ibañez-Antolín8, Jon Altuna-Álvarez1,, Amaia González-Magaña1,9, Itxaso Montánchez7, 
-Patricia Iraurgui-Arcarazo4, Ainhoa Gómez-Bonilla4, Félix Baranda García4, 
-Sonia Arrasate8, Humberto González-Díaz1,8,9*, David Albesa-Jové,1,9,10,*
+Carmen Velázquez1,#, María D. Pastor-Vivero4,#,*, Estefanía Ascencio-Medina2,3,#, 
+José Ángel Fernández-Higuero6, Maialen Zabala1, Laura Acosta2, Aliuska Duardo-Sánchez5, Ane Ibañez-Antolín8, Jon Altuna-Álvarez1,, Amaia González-Magaña1,9, Itxaso Montánchez7, Patricia Iraurgui-Arcarazo4, Ainhoa Gómez-Bonilla4, Félix Baranda García4, Sonia Arrasate8, David Albesa-Jové,1,9,10,* Humberto González-Díaz1,8,9*
+
 
 # Affiliations
 1 Instituto Biofisika (CSIC, UPV/EHU), Fundación Biofísica Bizkaia/Biofisika Bizkaia Fundazioa, 48940 Leioa, Spain.
