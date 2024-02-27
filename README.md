@@ -3,8 +3,8 @@ Advancing Cystic Fibrosis Care: Artificial Intelligence for Precision Medicine
 
 
 # Authors
-Carmen Velázquez1,#, María D. Pastor-Vivero4,#,*, Estefanía Ascencio-Medina2,3,#, 
-José Ángel Fernández-Higuero6, Maialen Zabala1, Laura Acosta2, Aliuska Duardo-Sánchez5, Ane Ibañez-Antolín8, Jon Altuna-Álvarez1,, Amaia González-Magaña1,9, Itxaso Montánchez7, Patricia Iraurgui-Arcarazo4, Ainhoa Gómez-Bonilla4, Félix Baranda García4, Sonia Arrasate8, David Albesa-Jové,1,9,10,* Humberto González-Díaz1,8,9*
+Carmen Velázquez1,#, María D. Pastor-Vivero*4,#, Estefanía Ascencio-Medina2,3,#, 
+José Ángel Fernández-Higuero6, Maialen Zabala1, Laura Acosta2, Aliuska Duardo-Sánchez5, Ane Ibañez-Antolín8, Jon Altuna-Álvarez1,, Amaia González-Magaña1,9, Itxaso Montánchez7, Patricia Iraurgui-Arcarazo4, Ainhoa Gómez-Bonilla4, Félix Baranda García4, Sonia Arrasate8, David Albesa-Jové*,1,9,10, Humberto González-Díaz*1,8,9
 
 
 # Affiliations
@@ -20,7 +20,8 @@ José Ángel Fernández-Higuero6, Maialen Zabala1, Laura Acosta2, Aliuska Duardo
 10 Departamento de Bioquímica y Biología Molecular, University of the Basque Country, 48080 Bilbao, España.
 
 # Abstract
-Cystic fibrosis (CF), is an autosomal recessive monogenic disease caused by mutations in a gene on the long arm of chromosome 7 that codes for the CFTR (Cystic Fibrosis Transmembrane conductance Regulator) protein. These mutations cause dysfunctional transport of chloride and other ions such as sodium and bicarbonate (Fonseca et al., 2020) which leads to the generation of thick and viscous mucus secretions from the lungs, as a consequence the airways are obstructed with an ideal environment for microbial colonization. The main treatment in this disease and specifically in exacerbations (phenomenon where there is a rapid deterioration of lung function) is antibiotic therapy according to the antibiotic resistance profile obtained from clinical micribiology plate culture. However with this method is slow and not totally accurate. In this context, combining Next-generation sequencing (NGS) PCR-based metagenomics for the identification of bacterial species from a clinical sample combined with Artificial inteligence /Machine learning (AI/ML) could be a fast track solution to create customized Personalized Medicine (PM) treatments for specific patients. Here we used the  Information Fusion +Perturbation Theory + Machine Learning (IFPTML) data pre-processing technique combined to Linear and Non-linear ML methods like Linear Discriminant Analysis (LDA) and Artificial Neuronal Networks (ANN) to obtain a PM predictive model for CF patients. Last, GDPR compliance Synthetic Data (SD) generation experiments by Monte Carlo (MC) methods have been performed in order to avoid patient re-identification and test model robustness at the same time. 
+Cystic Fibrosis (CF) is a genetic disorder characterized by dysfunctional ion transport leading to thick mucus secretion and chronic pulmonary infections. Current treatment relies heavily on antibiotics, guided by antibiotic susceptibility testing, which often lacks correlation with clinical outcomes due to the complex multifactorial nature of CF pulmonary disease. In this longitudinal study, we analyse the sputum samples from 48 CF patients using Next Generation Sequencing to track microbial changes alongside clinical outcomes over a period of six months. Additionally, we develop an Artificial Intelligence algorithm that integrates multiple clinical variables including bacteriome composition to predict clinical outcomes. Our findings underscore the potential of AI-driven approaches in CF clinical practice, offering insights into disease dynamics, treatment optimisation, and personalised medicine. Furthermore, we address data privacy concerns by introducing a Monte Carlo Synthetic Data methodology, ensuring General Data Protection Regulation compliance while preserving data robustness. Overall, our study enhances understanding of CF pathophysiology and highlights the potential of AI in improving patient outcomes.
+
 
 # Personal Data Protection
 
@@ -32,14 +33,17 @@ Supporting information files contain the following information:
 Supporting Information file SI00.doc
 Under construction
 
-Supporting Information file SI01.xlsx
+Supporting Data SI01_PCRIFPTML-LDA Results, last 2024_jan_24
+Supporting Data SI02_PCRIFPTML-MCSD model, last 2024_jan_24
+Supporting Data SI03 PCRIFPTML MC Synthetic Data, last 2024_jan_24
+Supporting Data SI04_ PCRIFPTML-LDA heatmap, last 2024_feb_21
 Under construction
 
 # ANN code
 Supporting information file IFPTML-ANN-CFIBRO.c contain the code in c language of the ANN models trained and validated in this paper. The code of the software used to generate the models is part of the STATISTICA package an is not propietary of the authors for release. The code may be used to implement the model in other software ever following the licence specifications by Statsoft inc. specified inside these files. Please in case you want to obtain similar ANN models use this package or other ANN algorithms package implemented in Phyton, WEKA, or other algorithms. In any case, we would like to point out that the linear models presented in the paper are simpler and have similar to better statistical performance than the ANN models released here. If your objective is using our models to predict new fuel blends we recommend the linear models instead of the ANN models released here. This linear models can be run in Excel or in any other script using the linear equations presented in the paper. You can reproduce the models using the data released at follows in the Supporting information files.
 
 # Funding
-Under construction
+The authors acknowledge financial support from the Basque Government's Department of Health (Research Projects 2022333042, 2020333031, and 2021333049). H.G.-D. thank the financial support of the Research Project AIMOFGIFT -KK-2022/00032- funded by the Basque Government, Department of Economic Development, Sustainability and Environment, through the program of aid for Collaborative Research in strategic areas. D.A.-J. acknowledges support by the MICINN Contract PID2021-127816NB-I00, Fundación Biofísica Bizkaia, the Basque Excellence Research Centre (BERC) program, and IT1745-22 of the Basque Government. M.Z. and J.A. acknowledges support from the Basque Government predoctoral program. We thank Dr. Adrián Odriozola and Nerea Vallejo (University of the Basque Country) for their support in NGS and critical reading of the manuscript.
 
 # References
 Under construction
