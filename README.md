@@ -20,7 +20,7 @@ José Ángel Fernández-Higuero5, Maialen Zabala1, Aliuska Duardo-Sánchez6, Ane
 9 Department of Immunology, Microbiology, and Parasitology, University of the Basque Country (UPV/EHU), 48940 Leioa, Spain. 
 10 Ikerbasque, Basque Foundation for Science, 48013 Bilbao, Spain
 
-# These authors contributed equally to this work
+(#) These authors contributed equally to this work
 * To whom correspondence should be addressed: David Albesa-Jové, Humberto González-Díaz and María D. Pastor-Vivero
 E-mails: 
 david.albesa@ehu.eus, 
