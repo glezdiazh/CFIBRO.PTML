@@ -21,7 +21,7 @@ José Ángel Fernández-Higuero5, Maialen Zabala1, Aliuska Duardo-Sánchez6, Ane
 10 Ikerbasque, Basque Foundation for Science, 48013 Bilbao, Spain
 
 (#) These authors contributed equally to this work
-* To whom correspondence should be addressed: David Albesa-Jové, Humberto González-Díaz and María D. Pastor-Vivero
+(*) To whom correspondence should be addressed: David Albesa-Jové, Humberto González-Díaz and María D. Pastor-Vivero
 E-mails: 
 david.albesa@ehu.eus, 
 humberto.gonzalezdiaz@ehu.es, 
