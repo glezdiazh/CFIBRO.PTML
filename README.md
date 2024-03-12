@@ -1,26 +1,35 @@
 # CFIBRO.PTML
-Advancing Cystic Fibrosis Care: Artificial Intelligence for Precision Medicine
+Advancing Cystic Fibrosis Care with Artificial Intelligence
 
 
 # Authors
-Carmen Velázquez1,#, María D. Pastor-Vivero*4,#, Estefanía Ascencio-Medina2,3,#, 
-José Ángel Fernández-Higuero6, Maialen Zabala1, Laura Acosta2, Aliuska Duardo-Sánchez5, Ane Ibañez-Antolín8, Jon Altuna-Álvarez1,, Amaia González-Magaña1,9, Itxaso Montánchez7, Patricia Iraurgui-Arcarazo4, Ainhoa Gómez-Bonilla4, Félix Baranda García4, Sonia Arrasate8, David Albesa-Jové*,1,9,10, Humberto González-Díaz*1,8,9
+Carmen Velázquez1,#, María D. Pastor-Vivero2,#,*, Estefanía Ascencio-Medina3,4,#, 
+José Ángel Fernández-Higuero5, Maialen Zabala1, Aliuska Duardo-Sánchez6, Ane Ibañez-Antolín7, Jon Altuna-Álvarez1,, Amaia González-Magaña1,8, Itxaso Montánchez9, Patricia Iraurgui-Arcarazo2, Ainhoa Gómez-Bonilla2, Félix Baranda García2, Sonia Arrasate7, David Albesa-Jové,1,8,10,* Humberto González-Díaz1,7,10*
+
 
 
 # Affiliations
 1 Instituto Biofisika (CSIC, UPV/EHU), Fundación Biofísica Bizkaia/Biofisika Bizkaia Fundazioa, 48940 Leioa, Spain.
-2 Department of Computer Science and Information Technologies, Faculty of Computer Science, CITIC-Research Center of Information and Communication Technologies, University of A Coruña, 15071 A Coruña, Spain.
-3 IKERDATA S.L., ZITEK, University of Basque Country UPVEHU, Rectorate Building, 48940 Leioa, Spain.
-4 Cruces University Hospital, IIS Biocruces-Bizkaia, 48903 Barakaldo, Spain.
-5 Department of Public Law, University of the Basque Country, 48940 Leioa, Spain.
-6 Departamento de Inmunología, Microbiología y Parasitología, University of the Basque Country, 48940 Leioa, Spain. 
-6 Jesuitak Politeknikoa, 48010 Bilbao, Spain.
-8 Department of Organic and Inorganic Chemistry, University of The Basque Country, 48940 Leioa, Spain.
-9 Ikerbasque, Basque Foundation for Science, 48013 Bilbao, Spain
-10 Departamento de Bioquímica y Biología Molecular, University of the Basque Country, 48080 Bilbao, España.
+2 Cruces University Hospital, Biobizkaia Health Research Institute, 48903 Barakaldo, Spain.
+3 Department of Computer Science and Information Technologies, Faculty of Computer Science, CITIC-Research Center of Information and Communication Technologies, University of A Coruña, 15071 A Coruña, Spain.
+4 IKERDATA S.L., ZITEK, University of Basque Country UPVEHU, Rectorate Building, 48940 Leioa, Spain.
+5 Jesuitak Politeknikoa, 48010 Bilbao, Spain.
+6 Department of Public Law, University of the Basque Country (UPV/EHU), 48940 Leioa, Spain.
+7 Department of Organic and Inorganic Chemistry, University of the Basque Country (UPV/EHU), 48940 Leioa, Spain.
+8 Department of Biochemistry and Molecular Biology, University of the Basque Country (UPV/EHU), 48080 Bilbao, España.
+9 Department of Immunology, Microbiology, and Parasitology, University of the Basque Country (UPV/EHU), 48940 Leioa, Spain. 
+10 Ikerbasque, Basque Foundation for Science, 48013 Bilbao, Spain
+
+# These authors contributed equally to this work
+* To whom correspondence should be addressed: David Albesa-Jové, Humberto González-Díaz and María D. Pastor-Vivero
+E-mails: 
+david.albesa@ehu.eus, 
+humberto.gonzalezdiaz@ehu.es, 
+mariadolores.pastorvivero@osakidetza.eus 
 
 # Abstract
 Cystic Fibrosis (CF) is a genetic disorder characterized by dysfunctional ion transport leading to thick mucus secretion and chronic pulmonary infections. Current treatment relies heavily on antibiotics, guided by antibiotic susceptibility testing, which often lacks correlation with clinical outcomes due to the complex multifactorial nature of CF pulmonary disease. In this longitudinal study, we analyse the sputum samples from 48 CF patients using Next Generation Sequencing to track microbial changes alongside clinical outcomes over a period of six months. Additionally, we develop an Artificial Intelligence algorithm that integrates multiple clinical variables including bacteriome composition to predict clinical outcomes. Our findings underscore the potential of AI-driven approaches in CF clinical practice, offering insights into disease dynamics, treatment optimisation, and personalised medicine. Furthermore, we address data privacy concerns by introducing a Monte Carlo Synthetic Data methodology, ensuring General Data Protection Regulation compliance while preserving data robustness. Overall, our study enhances understanding of CF pathophysiology and highlights the potential of AI in improving patient outcomes.
+
 
 
 # Personal Data Protection
