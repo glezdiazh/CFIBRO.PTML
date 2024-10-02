@@ -43,24 +43,59 @@ Collection of pharyngeal swab and sputum specimens was undertaken, giving preced
 
 Integral data encompassing variables such as age, gender, stature, CFTR mutation, antecedent pathologies including but not limited to pancreatitis, diabetes, and liver disease, the occurrence or non-occurrence of exacerbations, nutritional status, lung function indices (FEV1 and FVC or Forced Vital Capacity), as well as prior incidents of infections and antibiotic treatments have all contributed substantively to the scope of data acquisition.
 
-# Computational Methods 
 
 # Personal Data Protection
 
-All data management and analysis were in compliance with the General Data Protection Regulation (GDPR). GDPR defines pseudonymization in Article 4 (5) as: 'the processing of personal data in such a way that they can no longer be attributed to a data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organizational measures intended to ensure that the personal data are not attributed to an identified or identifiable natural person'. In general terms, pseudonymization aims at protecting personal data by hiding the identity of individuals (data subjects) in a data set, for example by replacing one or more personal data identifiers with so-called pseudonyms and by adequately protecting the link between the pseudonyms and the initial identifiers. Consequently, all patient data was pseudonymized by the team of the Biocruces Foundation by using an internal code to identify the patients. These codes and the identities of patients were never shared with the other researchers in this paper or the public in general. 
+Entrants into this study were restricted to CF patients who possessed verifiable records confirming their CF diagnosis and who bore no history of undergoing lung transplantation. Ethical endorsement for this study was procured from the ethics committee of University Hospital of Cruces (Barakaldo, Spain) and the University of the Basque Country’s ethics committee (Leioa, Spain). Preceding the incorporation into the study, patients and, if pertinent, their parents or guardians were comprehensively apprised of the study's nature, and their informed consent or assent, contingent on age, was duly procured. 
 
-![image](https://github.com/user-attachments/assets/ee51d9ed-ec8e-4123-87ce-a7e6d82e5c1c)
+Collection of pharyngeal swab and sputum specimens was undertaken, giving precedence to the latter where patient expectoration capacity allowed. The entire process of specimen procurement was entirely voluntary, with meticulous attention to the safeguarding of personal data and the utmost confidentiality of patient information. The initiative of sample procurement transpired over a duration of six months, characterised by a recurring temporal frequency of a singular sample per patient, with intervals of three months demarcating each collection episode. 
+
+Integral data encompassing variables such as age, gender, stature, CFTR mutation, antecedent pathologies including but not limited to pancreatitis, diabetes, and liver disease, the occurrence or non-occurrence of exacerbations, nutritional status, lung function indices (FEV1 and FVC or Forced Vital Capacity), as well as prior incidents of infections and antibiotic treatments have all contributed substantively to the scope of data acquisition.
 
 
-# Supporting Information
-Supporting information files contain the following information:
+# Computational Methods 
 
-Under construction
+# IFPTML model development
+In this work, we use the IFPTML strategy to train/validate alternative models able to predict the outcome values vij for each ith patient in different interviews (Ij = I0, I1, I2).  The model can classify the patients according to their personal subset of input continuous variables cj. See a detailed list of variables in Table 1. (https://github.com/glezdiazh/CFIBRO.PTML/issues/1#issue-2560503385).The model also considers the sub-set of personal discrete conditions/labels sj of the patient. See Table 2. (https://github.com/glezdiazh/CFIBRO.PTML/issues/1#issue-2560503385).
 
-# Funding
-The authors acknowledge financial support from the Basque Government's Department of Health (Research Projects 2022333042, 2020333031, and 2021333049). H.G.-D. thank the financial support of the Research Project AIMOFGIFT -KK-2022/00032- funded by the Basque Government, Department of Economic Development, Sustainability and Environment, through the program of aid for Collaborative Research in strategic areas. D.A.-J. acknowledges support by the MICINN Contract PID2021-127816NB-I00, Fundación Biofísica Bizkaia, the Basque Excellence Research Centre (BERC) program, and IT1745-22 of the Basque Government. M.Z. and J.A. acknowledges support from the Basque Government predoctoral program. We thank Dr. Adrián Odriozola and Nerea Vallejo (University of the Basque Country) for their support in NGS and critical reading of the manuscript.
+As follows, we illustrate the linear form of the IFPTML models and their different cases. The strategy includes three different stages IF, PT, and AI/ML. The general linear form of the IFPTML model to be developed is the following:
 
-# References
-Under construction
+# Classic ML linear model (model of order zero).
+In this case we use as input the original variables without re-grouping them in distances functions (r = 1, q = 1) and without scaling them with a moving average (α = 0). When we apply the previous constrains the equation of the model can be simplified as follow:
+
+Hyper-parameters: α = 0, q = 1, r = 1, Parameters: a_(c,s) = 0, a_(k,s) = a_k ∈ R
+
+f(v_ij)_calc = a_0 + Σ_(k=1)^kmax [a_k · V_k] #(1.1)
+
+# IFPTML model of order 1.
+In this case, we use as input the original variables without re-grouping them into distances functions (r = 1, q = 1), but we do scaling (α = 1). In this scaling we transformed the original variables into first-order PTOs with the form of deviations ∆Vk(sj). These deviations ∆Vk(sj) = Vk - <Vk(sj)> are calculated with a multi-conditional moving average <Vk(sj)>. This multi-conditional moving average takes different values for different groups of patients depending on the sub-set selected sj= sI, sII, or sIII, etc. Please, see Table 2. (https://github.com/glezdiazh/CFIBRO.PTML/issues/2#issue-2560514774). The different possible sub-sets of patients used according to (genetics, genre, treatments, etc.) When we apply the previous constraints, the equation of the model can be simplified as follows:
+
+Hyper-parameters: α = 1, q = 1, r = 1 Parameters: a_(c,s) = 1, a_(k,s) ∈ R
+
+f(v_ij)_calc = a_0 + a_1 · f(v_ij)_ref + Σ_(s=1)^smax Σ_(k=1)^kmax [a_(k,s) · (V_k - <V_k(s_j)>)] (1.2.1)
+
+f(v_ij)_calc = a_0 + a_1 · f(v_ij)_ref + Σ_(s=1)^smax Σ_(k=1)^kmax [a_(k,s) · ∆V_k(s_j)] (1.2.2)
+
+# IFPTML model of order 2.
+
+This is an IFPTML model with PTOs of second order. In this case we use as input the original variables but doing firstly scaling (α = 1) with a multi-conditional moving average ∆Vk(sj) and next re-grouping them (r = 1/2, q = 2) into Euclidean Distances functions ǁ∆Vk(sj)ǁ. This distance was calculated as the square root (r = ½) of the sum of the power two (q = 2) of each deviation. When we apply the previous constraints, the equation of the model can be simplified as follows:
+
+Hyper-parameters: α = 1, q = 2, r = ½  Parameters: a_(k,s) = 1
+
+f(v_ij)_calc = a_0 + a_1 · α · f(v_ij)_ref + Σ_(s=1)^smax [a_(c,s) · {Σ_(k=1)^kmax [V_k - α · (<V_k(c_j)>)]^2 }^(1/2)] (1.3.1)
+
+f(v_ij)_calc = a_0 + a_1 · α · f(v_ij)_ref + Σ_(s=1)^smax [a_(c,s) · ‖∆V_k(s_j)‖_(c_j)] (1.3.3)
+
+In order to seek the different cases of the IFPTML models mentioned above we need to carry out the following IFPMTL data pre-processing stages.  In these stages we are going to explain how to reorganize the data (data engineering) and calculate the values for the objective function f(vij)obs, reference function f(vij)ref, the moving averages <Vk(sj)>, deviations ∆Vk(sj) (first order PTOs), and Euclidean distances ǁ∆Vk(sj)ǁcj. In the following sections we explain in more detail the calculation of the objection function and input parameters of the model, see also the general workflow in Figure 1.(https://github.com/glezdiazh/CFIBRO.PTML/issues/3#issue-2560584698).In all the previous cases, Linear Discriminant Analysis (LDA) could be the algorithm of election to seek this kind of IFPTML linear classification (Hill and Lewicki, 2006).
+
+# IF pre-processing and data rearrangement 
+Firstly, we carried out an IF process for both patient clinical data and microbiological data. Patient clinical data (from clinical interviews) included personal data, pharmacological data, genetic data, etc. In contrast, microbiological data come from microbial cultures. Each row (case) corresponds to the ith patient in the rth visit/interview. These columns included four types of variables. The first class of variables vij includes the output values for each patient. The second class Vki are input variables of patients (age, weight, drug doses,…,etc.). The third class sj are input/output label variables of patients (gender, …,etc.). The discrete labels sj are of two types: the output variable label s0 and input variable labels sj>0. The output variable label get four different values s0 =Forced Expiratory Volume in 1 second FEV1(%), Forced Vital Capacities FVC(%), Hospitalization Days HD(dd), and days of intravenous antibiotics ATBiv days (dd). The different input discrete variables are organized in the form of a vector sj>0 = [s1, s2, ...s64]. Some of these variables and their values are the following. The first input labeling variable is s1 = Mutations 1, and get the values = ([delta]I507, [delta]F508, Y1092X, etc.) The second labeling variable is s2 = Mutation 2, and get the values = (R334W, [delta]I507, R1066C, G85E, etc.)In total, we have Npatients = 48, Ninterviews = 3, Noutputs = 4 output continuous variables (vij), Nvars = 60 input continuous variables (Vki), and Nlabels = 65 output/input labeling variables (sj). After the initial IF process, we carried out two additional IF and data rearrangement processes. The first was an IF horizontal process and the second and IF vertical process. The IF horizontal process applies to both input labels sj>0 and continuous input variables Vki.
+
+
+
+
+
+
+
 
 
